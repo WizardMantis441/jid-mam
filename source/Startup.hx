@@ -26,19 +26,12 @@ import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.addons.ui.FlxUITabMenu;
 
-class Startup extends FlxState
-{
-
-	override public function create()
-	{
+class Startup extends FlxState {
+	override public function create() {
 		super.create();
-
-		//"Uncapped" fps. maybe some other time
-		//openfl.Lib.current.stage.frameRate = 999;
-		
 		FlxG.mouse.visible = false;
 
-		UIStateExt.defaultTransIn = FadeIn;
+		UIStateExt.defaultTransIn = FadeIn; // TODO: learn what the fuck these 4 are what the hell
         UIStateExt.defaultTransInArgs = [0.25];
         UIStateExt.defaultTransOut = FadeOut;
         UIStateExt.defaultTransOutArgs = [0.25];
@@ -48,10 +41,10 @@ class Startup extends FlxState
 		});
 	}
 
+	/* TODO: why lmao
 	override function update(elapsed){
 		super.update(elapsed);
-		//used to prevent weird audio issues on html5, idk if its just me but shit gets weird
-		FlxG.sound.play("assets/sounds/emptyMiss.ogg", 0.1);
+		FlxG.sound.play("assets/sounds/emptyMiss.ogg", 0.1); // supposedly prevents audio bug on html5
 	}
-
+	*/
 }
